@@ -1,0 +1,14 @@
+[Unit]
+Description=PaperPlane Link Sharing Server
+After=network.target local-fs.target nss-lookup.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/node /var/local/paperplane/server.js
+#StandardOutput=/var/log/paperplane.log
+#Not needed as systemd has it's own logging service
+#To view logs use 'systemd status PaperPlane'
+#To enable that log file, uncomment the line
+
+[Install]
+WantedBy=multi-user.target
